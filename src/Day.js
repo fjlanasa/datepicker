@@ -14,11 +14,6 @@ export default function Day(props) {
   }
 
   let {day, month, startDate, endDate, handleSelectDate} = props;
-  if (day.format('YYYY-MM-DD') === moment().format('YYYY-MM-DD')) {
-    style.border = "1px solid #e6e6e6";
-    style.borderRadius = '50%'
-  }
-
   if (startDate && day.format('YYYY-MM-DD') === startDate.format('YYYY-MM-DD')) {
     style.color = 'white';
     style.backgroundColor = 'blue';
@@ -40,6 +35,11 @@ export default function Day(props) {
 
   if (day.month() !== month) {
     style.visibility = 'hidden';
+  }
+
+  if (day.format('YYYY-MM-DD') === moment().format('YYYY-MM-DD') && !day.isSame(startDate) && !day.isSame(endDate)) {
+    style.border = "1px solid #e6e6e6";
+    style.borderRadius = '50%'
   }
 
   return (

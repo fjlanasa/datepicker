@@ -61,6 +61,7 @@ class Calendar extends Component {
           date={currentDate}
           decrementMonth={this.decrementMonth}
           handleSelectDate={this.handleSelectDate}
+          showWeekdays={true}
           currentDate={this.currentDate}
           focusedDate={this.state.focusedDate}
           month={currentDate.month()}
@@ -71,6 +72,7 @@ class Calendar extends Component {
           date={nextMonthDate}
           incrementMonth={this.incrementMonth}
           handleSelectDate={this.handleSelectDate}
+          showWeekdays={true}
           currentDate={this.currentDate}
           focusedDate={this.state.focusedDate}
           month={nextMonthDate.month()}
